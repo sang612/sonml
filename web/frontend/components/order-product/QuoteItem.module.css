@@ -1,0 +1,13 @@
+.row2 {
+  grid-gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 8.75rem auto;
+}
+.col {
+  grid-column-gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.fontBold {
+    font-weight: bold;
+  }

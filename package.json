@@ -1,0 +1,29 @@
+{
+  "name": "dev-form",
+  "version": "1.0.0",
+  "main": "web/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "shopify": "shopify",
+    "start": "cd web && npm run serve",
+    "build": "shopify app build",
+    "dev": "shopify app dev",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy",
+    "logout": "shopify auth logout"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.16",
+    "@shopify/app": "3.23.0",
+    "@shopify/cli": "3.23.0",
+    "@shopify/polaris-icons": "^6.7.0",
+    "@shopify/post-purchase-ui-extensions-react": "^0.13.2",
+    "clsx": "^1.2.1",
+    "dayjs": "^1.11.7",
+    "react": "^17.0.0"
+  },
+  "author": "zens"
+}

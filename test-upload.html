@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>UPLOAD TEST APP</title>
+</head>
+
+<body>
+  <!--  SINGLE FILE -->
+  <form id="form2" class="tab">
+    <div class="block">
+      <div class="w-20 mb-200">添付ファイル</div>
+      <div class="note1"></div>
+      <div class="column">
+        <div class="row ">
+          <input type="file" hidden id="btn1" />
+          <label class="buttonUpload flex" for="btn1">ファイルを選択</label>
+          <span id="text1">選択されていません。</span>
+        </div>
+        <div class="row ">
+          <input type="file" hidden id="btn2" />
+          <label class="buttonUpload flex" for="btn2">ファイルを選択</label>
+          <span id="text2">選択されていません。</span>
+        </div>
+        <div class="row ">
+          <input type="file" hidden id="btn3" />
+          <label class="buttonUpload flex" for="btn3">ファイルを選択</label>
+          <span id="text3">選択されていません。</span>
+        </div>
+        <div class="desc">※PDF，エクセル，ワードなどで作成された見積書や写真、図面などのファイルが添付できます。xls.xlsx.doc.docx.gif .jpeg
+          </br>.jpg.pdf.png.tiff.mdiの形式のみ、合計サイズ8MBまでアップロード可能です。</div>
+      </div>
+      <select name="table">
+        <option value="propsal">Proposal</option>
+        <option value="estimate">Estimate</option>
+        <option value="kitchen">Kitchen</option>
+      </select>
+      <br />
+      <input type="text" name="id" id="id-file" />
+    </div>
+    <button type="submit" class="btnSubmit">内容確認画面へ</button>
+  </form>
+</body>
+
+<script>
+  var currentTab = 0;
+  var form1 = document.getElementById("form1");
+  var form2 = document.getElementById("form2");
+
+  let text1 = document.getElementById("text1");
+  let fileName = document.getElementById("btn1");
+
+  let text3 = document.getElementById("text3");
+  let fileName3 = document.getElementById("btn3");
+
+  let text2 = document.getElementById("text2");
+  let fileName2 = document.getElementById("btn2");
+
+  fileName.addEventListener("change", function () {
+    text1.innerHTML = fileName.files[0].name;
+  });
+
+  fileName2.addEventListener("change", function () {
+    text2.innerHTML = fileName2.files[0].name;
+  });
+
+  fileName3.addEventListener("change", function () {
+    text3.innerHTML = fileName3.files[0].name;
+  });
+
+  const input = document.querySelector('input[type="file"]');
+
+  form2.onsubmit = function (e) {
+    let data = new FormData(form2);
+    e.preventDefault();
+    for (const file of input.files) {
+      data.append("files", file, file.name);
+    }
+
+    data.append("table", "kitchen")
+    data.append("id", "6397fde610b7a3dbe1663b31")
+    const options = {
+      method: "POST",
+      body: data
+    };
+
+    fetch("https://waocon-shopify.hls-dev.asia/api/store/file", options);
+  };
+
+
+</script>
+
+</html>

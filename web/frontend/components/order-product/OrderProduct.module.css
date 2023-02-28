@@ -1,0 +1,25 @@
+.row {
+  display: grid;
+  grid-template-columns: auto 5fr;
+  justify-content: space-between;
+}
+.badgeContainer {
+  position: absolute;
+  top: -25%;
+  right: -25%;
+}
+.textRight {
+  text-align: right;
+}
+.itemInfor {
+  display: grid;
+  grid-template-areas: "col-2 col-3 col-4";
+  grid-template-columns: 6fr minmax(5.625rem, auto) minmax(5rem, auto);
+  margin-left: 1rem;
+}
+.fontBold {
+  font-weight: bold;
+}
+.imgContainer {
+  position: relative;
+}

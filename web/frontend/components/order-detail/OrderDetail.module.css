@@ -1,0 +1,59 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.rowContainer {
+  grid-row-gap: 0.5rem;
+  display: grid;
+}
+.fontBold {
+  font-weight: bold;
+}
+.section {
+  align-items: start;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(100, minmax(0, auto));
+  margin: auto;
+}
+.side {
+  grid-column: 2;
+  grid-row: 1/-1;
+  margin-left: 1.25rem;
+  margin-top: 0;
+  max-width: 18.125rem;
+}
+.sideRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 10px;
+}
+.breakWord {
+  word-break: break-word;
+}
+.hFull {
+  height: 100%;
+}
+.textGray {
+  color: gray;
+}
+.textContainer {
+  margin-top: 0.5rem;
+}
+.badgeGroup {
+  display: flex;
+  gap: 5px;
+}
+.badgeContainer {
+  position: absolute;
+  top: -25%;
+  right: -25%;
+}
+.pointer:hover {
+  cursor: pointer;
+}
+.textRight {
+  text-align: right;
+}
